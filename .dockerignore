@@ -1,0 +1,44 @@
+# Docker build context ignore file
+# Speeds up Docker build by excluding unnecessary files
+
+# Maven
+target/
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Version Control
+.git/
+.gitignore
+.gitattributes
+
+# Build artifacts
+*.class
+*.jar
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+README.md
+HELP.md
+LICENSE
+
+# Test files
+src/test/
+
+# Local development
+.env
+.env.local
+docker-compose.override.yml

@@ -1,0 +1,30 @@
+# render.yaml - Infrastructure as Code for Render.com
+# Deploy this service using: render deploy --config render.yaml
+
+services:
+  - type: web
+    name: ghibli-api
+    env: java
+    plan: standard
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/ghibliapi-0.0.1-SNAPSHOT.jar
+    
+    # Environment variables (add secrets in Render dashboard)
+    envVars:
+      - key: STABILITY_API_KEY
+        scope: build
+        sync: false
+      - key: GROQ_API_KEY
+        scope: build
+        sync: false
+      - key: PORT
+        value: 8082
+    
+    # Health check
+    healthCheckPath: /actuator/health
+    
+    # Disk persistence (optional, for logs)
+    disk:
+      name: ghibli-api-logs
+      mountPath: /app/logs
+      sizeGB: 1
