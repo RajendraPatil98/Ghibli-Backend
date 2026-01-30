@@ -30,7 +30,7 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173", "https://ghibli-frontend-for-stability-ai-ghibli.onrender.com"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173", "https://ghibli-frontend-for-stability-ghibli.onrender.com"})
 @RequiredArgsConstructor
 public class EmotionalAnalysisController {
 
